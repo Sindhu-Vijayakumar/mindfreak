@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block body %}
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="row mbr-justify-content-center">
+        <div class="col-lg-6 mbr-col-md-10">
+            <div class="wrap">
+                <div class="ico-wrap">
+                    <span class="mbr-iconfont fa-list-ul fa"></span>
+                </div>
+                <div class="text-wrap vcenter">
+                    <a href="contentpage/"><h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">All Contents</h2> </a>
+                    <p class="mbr-fonts-style text1 mbr-text display-6">Here you can view all the contents related to any topic.This helps us gain information.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 mbr-col-md-10">
+            <div class="wrap">
+                <div class="ico-wrap">
+                    <span class="mbr-iconfont fa-question-circle fa"></span>
+                </div>
+                <div class="text-wrap vcenter">
+                    <a href="quizpage/"><h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Quiz page</h2></a>
+                    <p class="mbr-fonts-style text1 mbr-text display-6">Reading information as a way of learning does have its uses. Quizzes do help us retain information.</p>
+                </div>
+            </div>
+        </div>
+        
+            <div class="col-lg-6 mbr-col-md-10">
+                <div class="wrap">
+                    <div class="ico-wrap">
+                        <span class="mbr-iconfont fa-edit fa"></span>
+                    </div>
+                    <div class="text-wrap vcenter">
+                        <a href="addcontent/"><h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Add Content</h2></a>
+                        <p class="mbr-fonts-style text1 mbr-text display-6">People like to read and share content about topics that could be useful to other people.</p>
+                    </div>
+                </div>
+            </div>
+       
+        <div class="col-lg-6 mbr-col-md-10">
+            <div class="wrap">
+                <div class="ico-wrap">
+                    <span class="mbr-iconfont fa-plus-circle fa"></span>
+                </div>
+                <div class="text-wrap vcenter">
+                    <a href="addquiz/"><h2 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Add Quiz</h2></a>
+                    <p class="mbr-fonts-style text1 mbr-text display-6">The Quiz is a very powerful activity that can meet many teaching needs, knowledge tests from simple to complex.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="bg-color green ">
+        <div class="container-fluid">
+        <div class="content-wrapper">
+           <div class="row">
+              <div class="col-md-6 col-lg-6">
+                 <p >
+                 <h1 class="font arrange-content left-pad" style="display: block;font-size: 56px;line-height: 72px;color: white;">Informative and fun <br/>with useful features</h1>
+                 </p>
+                 <p class="description left-pad"> MindFreak helps you create and get information about Technical topics and also Quizzes.These things helps to retain information and gain knowledge.</p>
+                 <div class="left-pad">
+                   
+                    <a href="/signup/"><button type="button" class=" btn btn-default design ">SIGN UP FOR FREE</button></a>
+                 </div>
+              </div>
+              <div class="col-md-6 col-lg-6 ">
+                 <img src="/static/quizimg.jpg" class="hidden-xs hidden-sm laptop arrange-content" alt="evernote image" >
+              </div>
+           </div>
+           </div>
+        </div>
+     </div>
+{% endif %}
+{% endblock %}

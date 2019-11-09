@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="col-sm-12 col-xs-12 pull-right" id="maindiv">
+        <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Levels
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="/contentpage/">All</a>
+                    <a class="dropdown-item" href="/contentpage/beginner/">Beginner</a>
+                    <a class="dropdown-item" href="/contentpage/intermediate/">Intermediate</a>
+                    <a class="dropdown-item" href="/contentpage/advanced/">Advanced</a>
+                </div>
+        </div>
+        <div class="actionbtn"><a class="btn btn-primary pull-right" href="/addcontent/" role="button">Add Content</a></div>
+    </div>
+    <div class="row">
+        {% for eachcontent in Allcontent %}
+        <div class="col-md-12">
+            <div class="card flex-md-row mb-4 shadow-sm h-md-250">
+                <div class="card-body d-flex flex-column align-items-start">
+                <h3 class="mb-0 text-dark">
+                   {{eachcontent.topicname}} - <span class="byuser">by {{eachcontent.user.username}}</span>
+                </h3>
+                <br>
+                <p class="card-text mb-auto">{{eachcontent.description}}.</p>
+                <p class="mb-0"><b>Level:</b>
+                    {{eachcontent.level}}
+                </p>
+                <a class="text-dark" href="{{eachcontent.link}}"><b>Link:</b> {{eachcontent.link}}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
